@@ -22,34 +22,19 @@ for (var i = 0; i < sells.length; i++) {
 
     for (var i = 0; i < rows.length; i++) {
       var cont = [];
+      var col1 = [];
+      var col2 = [];
+      var col3 = [];
+      var diag1 = [];
+      var diag2 = [];
 
       for (var s = 0; s < rows[i].children.length; s++) {
-        var col1 = [];
-        var col2 = [];
-        var col3 = [];
-        var diag1 = [];
-        var diag2 = [];
         cont.push(rows[i].children[s].textContent);
-
-        col1.push(rows[0].children[0].textContent);
-        col1.push(rows[1].children[0].textContent);
-        col1.push(rows[2].children[0].textContent);
-
-        col2.push(rows[0].children[1].textContent);
-        col2.push(rows[1].children[1].textContent);
-        col2.push(rows[2].children[1].textContent);
-
-        col3.push(rows[0].children[2].textContent);
-        col3.push(rows[1].children[2].textContent);
-        col3.push(rows[2].children[2].textContent);
-
-        diag1.push(rows[0].children[0].textContent);
-        diag1.push(rows[1].children[1].textContent);
-        diag1.push(rows[2].children[2].textContent);
-
-        diag2.push(rows[0].children[2].textContent);
-        diag2.push(rows[1].children[1].textContent);
-        diag2.push(rows[2].children[0].textContent);
+        col1.push(rows[s].children[0].textContent);
+        col2.push(rows[s].children[1].textContent);
+        col3.push(rows[s].children[2].textContent);
+        diag1.push(rows[s].children[s].textContent);
+        diag2.push(rows[s].children[rows.length - 1 - s].textContent);
       }
 
       winnerAlgor(col1);
